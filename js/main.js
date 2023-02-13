@@ -74,7 +74,7 @@ function createModal(id, innerText, imageNumber, titleHTML, bodyHTML) {
     modalBody.classList.add('modal-body');
     modalBodyWrapperImg.classList.add('img-wrapper');
     modalBodyWrapperImg.src = `./assets/images/Capture${imageNumber + 15}.JPG`;
-    modalBodyWrapperImg.style.width = "70vw";
+    modalBodyWrapperImg.style.width = "50vw";
     modalBodyTextWrapper.classList.add('text-wrapper');
     modalBodyTextWrapperP1Strong.innerHTML = titleHTML;
     modalBodyTextWrapperP2.innerHTML = bodyHTML;
