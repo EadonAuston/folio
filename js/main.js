@@ -11,7 +11,8 @@ function createPortfolioCard(dataItem, imageNumber, category, type, dataItem2) {
    portfolioCard.dataset.open = dataItem2;
    portfolioBody.classList.add('card-body');
    portfolioImage.alt = 'portfolio-icon';
-   portfolioImage.src = `./assets/images/portfolio-${imageNumber}.jpg`;
+   portfolioImage.src = `./assets/images/Capture${imageNumber + 15}.JPG`;
+  
    portfolioLink.classList.add('card-popup-box');
    portfolioLinkDiv.innerHTML = category;
    portfolioLinkH3.innerHTML = type;
@@ -26,17 +27,13 @@ function createPortfolioCard(dataItem, imageNumber, category, type, dataItem2) {
    document.querySelector('.portfolio-grid').appendChild(portfolioCard);
 
 }
-createPortfolioCard('web', 1, 'Web Development', 'Food Website', "web-1");
-createPortfolioCard('web', 2, 'Web Development', 'Skate Website', "web-2");
-createPortfolioCard('web', 3, 'Web Development', 'Eating Website', "web-3");
-createPortfolioCard('ui', 4, 'UI Design', 'Cool Design', "ui-1");
-createPortfolioCard('app', 5, 'App Development', 'Game App', "app-1");
-createPortfolioCard('app', 6, 'App Development', 'Gambling App', "app-2");
-createPortfolioCard('ui', 7, 'UI Design', 'Cool Looks Design', "ui-2");
-createPortfolioCard('ui', 8, 'UI Design', 'Fantastic Design', "ui-3");
+createPortfolioCard('web', 1, 'Web Development', 'Code Commerce', "web-1");
+createPortfolioCard('web', 2, 'Web Development', 'Debt Calculator', "web-2");
+createPortfolioCard('web', 3, 'Web Development', 'CodeRad', "web-3");
 
 
-function createModal(id, innerText, imageNumber) {
+
+function createModal(id, innerText, imageNumber, titleHTML, bodyHTML) {
     let modal = document.createElement('div');
     let modalDialog = document.createElement('div');
     let modalHeader = document.createElement('header');
@@ -76,23 +73,37 @@ function createModal(id, innerText, imageNumber) {
     modalHeaderH3.innerText = innerText;
     modalBody.classList.add('modal-body');
     modalBodyWrapperImg.classList.add('img-wrapper');
-    modalBodyWrapperImg.src = `./assets/images/portfolio-${imageNumber}.jpg`;
+    modalBodyWrapperImg.src = `./assets/images/Capture${imageNumber + 15}.JPG`;
+    modalBodyWrapperImg.style.width = "70vw";
     modalBodyTextWrapper.classList.add('text-wrapper');
-    modalBodyTextWrapperP1Strong.innerHTML = "My first awesome website";
-    modalBodyTextWrapperP2.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit.";
-    modalBodyTextWrapperP3.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit.";
+    modalBodyTextWrapperP1Strong.innerHTML = titleHTML;
+    modalBodyTextWrapperP2.innerHTML = bodyHTML;
+   
     document.querySelector('.all-modals').appendChild(modal);
 
 }   
 
-createModal('web-1', 'Web Project 1', 1);
-createModal('web-2', 'Web Project 2', 2);
-createModal('web-3', 'Web Project 3', 3);
-createModal('ui-1', 'UI Project 1', 4);
-createModal('app-1', 'App Project 1', 5);
-createModal('app-2', 'App Project 2', 6);
-createModal('ui-2', 'UI Project 2', 7);
-createModal('ui-3', 'UI Project 3', 8);
+let project1Title = 'Building a React Store Application';
+let project1Body = `Five pages in length of React Components building an E-commerce store that uses state and props to track user input and cart data.
+
+Link: eadon-codecommerce.netlify.app`;
+
+let project2Title = 'A Highly Sophisticated Debt Calculator';
+let project2Body = `This debt calculator built using React can take in a loan amount, an interest rate, and the amount you are paying off, and can give you very detailed statistics regarding how many payments it will take to pay off the loan at your current payoff rate, as well as your payment history.
+
+Link: eadon-debtcalc.netlify.app`;
+
+let project3Title = 'CodeRad Project';
+let project3Body = `A beautiful but simple website with clean code and has an amazing UI experience.
+
+Link: eadon-coderad.netlify.app`;
+
+
+
+createModal('web-1', 'React Code Commerce', 1, project1Title, project1Body);
+createModal('web-2', 'React Debt Calculator', 2, project2Title, project2Body);
+createModal('web-3', 'CodeRad Project', 3, project3Title, project3Body);
+
 
 
 

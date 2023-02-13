@@ -363,16 +363,6 @@
 }
 
 
-
- 
-
-
-
-
-
-
-
-
 .main-menu{ display:flex; }
 
 .main-menu .nav-item{
@@ -380,7 +370,7 @@
     font-size: 15px;
     line-height: 26px;
     cursor: pointer;
-    text-transform: lowercase;
+    
 }
 
 .modal {
